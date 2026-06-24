@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+  <title>MK体育 · 稳定入口与页面说明 | zhindex-mk.com</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #fafaf9;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans', 'Helvetica Neue', sans-serif;
+      color: #1e1e1e;
+      line-height: 1.75;
+      padding: 2rem 1.25rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 680px;
+      width: 100%;
+    }
+
+    /* 窄正文宽度，清晰层级 */
+    article {
+      background: #ffffff;
+      padding: 2.5rem 2rem;
+      border-radius: 0;
+      box-shadow: 0 0 0 1px rgba(0,0,0,0.03), 0 1px 3px rgba(0,0,0,0.02);
+    }
+
+    /* 标题层级 */
+    h1 {
+      font-size: 1.85rem;
+      font-weight: 580;
+      letter-spacing: -0.015em;
+      line-height: 1.25;
+      margin-bottom: 1.25rem;
+      color: #111;
+    }
+
+    h2 {
+      font-size: 1.35rem;
+      font-weight: 520;
+      margin: 2rem 0 0.75rem 0;
+      letter-spacing: -0.01em;
+      color: #1a1a1a;
+    }
+
+    .subhead {
+      font-size: 1rem;
+      color: #5f5f5f;
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #ededed;
+      padding-bottom: 1rem;
+      font-weight: 400;
+      line-height: 1.6;
+    }
+
+    p {
+      margin-bottom: 1.35rem;
+      font-size: 0.975rem;
+      color: #2a2a2a;
+    }
+
+    p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    /* 引用提示块 */
+    .callout {
+      background: #f3f3f2;
+      padding: 1.25rem 1.5rem;
+      margin: 1.75rem 0;
+      border-left: 4px solid #2b2b2b;
+      font-size: 0.9rem;
+      color: #1f1f1f;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .callout strong {
+      font-weight: 560;
+    }
+
+    /* 访问句（简短卡片式） */
+    .access-note {
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e6e6e6;
+      font-size: 0.925rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      gap: 0.25rem 0.15rem;
+      color: #333;
+    }
+
+    .access-note a {
+      color: #1e1e1e;
+      text-decoration: none;
+      border-bottom: 1px solid #aaa;
+      font-weight: 470;
+      transition: border-color 0.15s, color 0.15s;
+    }
+
+    .access-note a:hover {
+      color: #000;
+      border-bottom-color: #000;
+    }
+
+    /* 内嵌链接（正文中自然引用） */
+    p a {
+      color: #1e1e1e;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 1px;
+      text-decoration-color: #b0b0b0;
+      font-weight: 440;
+      transition: text-decoration-color 0.15s;
+    }
+
+    p a:hover {
+      text-decoration-color: #1e1e1e;
+    }
+
+    /* 小型列表 / 场景摘要（不用卡片，用清简段落） */
+    .scene-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 1.25rem 0;
+    }
+
+    .scene-list li {
+      position: relative;
+      padding-left: 1.25rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.925rem;
+      color: #2e2e2e;
+    }
+
+    .scene-list li::before {
+      content: "—";
+      position: absolute;
+      left: 0;
+      color: #888;
+    }
+
+    /* 特点简语 */
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 1.5rem;
+      margin: 1rem 0 1.5rem 0;
+    }
+
+    .feature-item {
+      flex: 1 1 140px;
+      font-size: 0.9rem;
+      color: #2c2c2c;
+      border-left: 2px solid #d0d0d0;
+      padding-left: 0.75rem;
+    }
+
+    .feature-item strong {
+      display: block;
+      font-weight: 520;
+      margin-bottom: 0.15rem;
+      font-size: 0.95rem;
+      color: #151515;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #eee;
+      margin: 2rem 0 0.5rem 0;
+    }
+
+    .footnote {
+      font-size: 0.8rem;
+      color: #8a8a8a;
+      margin-top: 2rem;
+      text-align: left;
+      letter-spacing: 0.01em;
+    }
+
+    /* 响应式 */
+    @media (max-width: 520px) {
+      body {
+        padding: 1rem 0.75rem;
+      }
+      article {
+        padding: 1.5rem 1.25rem;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      h2 {
+        font-size: 1.2rem;
+      }
+      .feature-grid {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .feature-item {
+        flex: 1 1 auto;
+      }
+      .callout {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <article>
+    <h1>MK体育 · 访问入口与页面逻辑说明</h1>
+    <div class="subhead">基于稳定链接结构的内容分发 · 简洁直达</div>
+
+    <p>
+      <strong>MK体育</strong> 聚合了体育资讯、比分数据与赛事索引模块，整体页面以信息密度优先，减少冗余跳转。
+      当前站点 <a href="https://zhindex-mk.com">MK体育</a> 作为固定入口，承担资源定位与内容索引功能，
+      不依赖中间页或重定向跳板，保持访问链路的直接性。
+    </p>
+
+    <h2>页面角色与稳定入口</h2>
+    <p>
+      从站点结构来看，<strong>zhindex-mk.com</strong> 被设计为始终可用的索引页面，
+      用户通过该地址可直接获取到体育内容聚合的概览。不同于动态着陆页，
+      此处更强调入口的可达性与结构透明：每个主要内容分区都通过显式链接暴露，
+      避免深层嵌套或需要多次点击才能触及核心信息。
+    </p>
+
+    <div class="callout">
+      <strong>提示</strong> · 如果你通过书签、搜索引擎或直接键入地址到达此页，那么你正位于 <strong>MK体育</strong> 的固定索引节点。
+      所有指向 <a href="https://zhindex-mk.com">MK体育</a> 的引用均保持统一路径，便于长期收藏与复用。
+    </div>
+
+    <h2>内容组织特点</h2>
+    <div class="feature-grid">
+      <div class="feature-item">
+        <strong>正文优先</strong>
+        减少装饰性元素，段落与标题直接承载信息
+      </div>
+      <div class="feature-item">
+        <strong>窄栏阅读</strong>
+        正文宽度控制在 680px 以内，优化长文本视线流动
+      </div>
+      <div class="feature-item">
+        <strong>低视觉噪音</strong>
+        无广告、无弹窗、无强制关注组件
+      </div>
+    </div>
+
+    <h2>常见访问场景</h2>
+    <ul class="scene-list">
+      <li>通过固定链接查阅体育内容索引，了解最新板块分布</li>
+      <li>将 <a href="https://zhindex-mk.com">MK体育</a> 作为起始页，快速导航至各分类</li>
+      <li>验证站点可达性，确认当前资源路径是否有效</li>
+      <li>获取页面说明，了解内容组织方式与更新习惯</li>
+    </ul>
+
+    <p>
+      无论你从哪个入口抵达，<strong>zhindex-mk.com</strong> 始终返回一致的页面说明与索引信息。
+      这意味着你可以放心将本页加入书签，或作为长期参考点。内容本身不包含动态弹窗或会话跟踪，
+      仅提供静态说明与链路指引。
+    </p>
+
+    <h2>FAQ 摘要</h2>
+    <p>
+      <strong>Q：</strong> 页面会频繁更换地址或结构吗？<br>
+      <strong>A：</strong> 不会。当前页面作为固定索引页，内容更新时会保留相同链接结构，仅调整正文描述与模块排序。
+    </p>
+    <p>
+      <strong>Q：</strong> 如何确保访问的稳定性？<br>
+      <strong>A：</strong> 建议直接使用根域名 <a href="https://zhindex-mk.com">MK体育</a>，避免依赖第三方聚合链接。
+      本站不依赖临时参数或动态路由，所有内容通过静态 URL 分发。
+    </p>
+
+    <!-- 访问句（嵌入链接，自然语境） -->
+    <div class="access-note">
+      <span>访问索引页</span>
+      <a href="https://zhindex-mk.com">MK体育</a>
+      <span>· 稳定入口，直接可达。</span>
+    </div>
+
+    <hr>
+
+    <div class="footnote">
+      页面版本 · 简洁说明型 ｜ 内容方向：稳定入口与结构概述
+    </div>
+  </article>
+</div>
+</body>
+</html>
